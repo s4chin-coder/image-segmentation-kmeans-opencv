@@ -113,9 +113,9 @@ The WCSS value decreases as K increases because clusters become more compact. Th
 
 *(Add elbow_plot.png here if available)*
 
-```markdown
+
 ![Elbow Plot](Output/elbow_plot.png)
-```
+
 
 ---
 
