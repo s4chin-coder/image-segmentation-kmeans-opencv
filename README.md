@@ -1,16 +1,16 @@
 # 🎨 Image Segmentation using K-Means Clustering
 
-A Computer Vision project that performs color-based image segmentation using the **K-Means Clustering Algorithm** and analyzes the effect of different cluster values (K) on segmentation quality.
+![K-Means Segmentation](Output/k_values.png)
+
+A Computer Vision project that performs **color-based image segmentation** using the **K-Means Clustering Algorithm**. The project analyzes how different cluster values (**K = 2, 4, 6, and 8**) affect image segmentation quality and evaluates clustering performance using **WCSS (Within-Cluster Sum of Squares)** and the **Elbow Method**.
 
 ---
 
 ## 📌 Overview
 
-Image segmentation is the process of dividing an image into meaningful regions based on similar characteristics.
+Image segmentation is the process of partitioning an image into meaningful regions based on similar characteristics.
 
-In this project, K-Means Clustering is applied to group pixels with similar colors into clusters, producing segmented versions of the image for different values of **K = 2, 4, 6, and 8**.
-
-The project also evaluates clustering quality using **WCSS (Within-Cluster Sum of Squares)** and the **Elbow Method**.
+In this project, K-Means Clustering groups pixels with similar colors into clusters, producing segmented images with varying levels of detail. As the value of **K** increases, the segmentation preserves more colors and finer image features.
 
 ---
 
@@ -26,9 +26,9 @@ The project also evaluates clustering quality using **WCSS (Within-Cluster Sum o
 
 ✅ Elbow Method Visualization
 
-✅ Segmentation Comparison
+✅ Segmentation Quality Comparison
 
-✅ Image Processing using OpenCV
+✅ OpenCV-Based Image Processing
 
 ---
 
@@ -43,33 +43,33 @@ The project also evaluates clustering quality using **WCSS (Within-Cluster Sum o
 
 ## ⚙️ Algorithm Workflow
 
-### 1. Load Image
+### 1️⃣ Load Image
 
 Read the input color image.
 
-### 2. Reshape Pixel Data
+### 2️⃣ Reshape Pixel Data
 
 Convert image pixels into a 2D array.
 
-### 3. Apply K-Means Clustering
+### 3️⃣ Apply K-Means Clustering
 
 Cluster pixels based on color similarity.
 
-### 4. Generate Segmented Images
+### 4️⃣ Generate Segmented Images
 
-Replace pixel colors with cluster centroids.
+Replace pixel values with their corresponding cluster centroids.
 
-### 5. Calculate WCSS
+### 5️⃣ Compute WCSS
 
 Measure clustering compactness.
 
-### 6. Plot Elbow Curve
+### 6️⃣ Plot Elbow Curve
 
-Analyze optimal cluster selection.
+Analyze the optimal number of clusters.
 
-### 7. Visualize Results
+### 7️⃣ Visualize Results
 
-Compare segmentation outputs for different K values.
+Compare segmented outputs for different values of K.
 
 ---
 
@@ -78,17 +78,14 @@ Compare segmentation outputs for different K values.
 ```text
 Image-Segmentation-KMeans/
 │
-├── images/
-│   └── input_image.jpg
+├── Image/
+│   └── birds.jpg
 │
-├── outputs/
-│   ├── segmented_k2.jpg
-│   ├── segmented_k4.jpg
-│   ├── segmented_k6.jpg
-│   ├── segmented_k8.jpg
+├── Output/
+│   ├── k_values.png
 │   └── elbow_plot.png
 │
-├── segmentation.py
+├── kmeans_segmentation.py
 ├── Project_Report.pdf
 └── README.md
 ```
@@ -99,28 +96,26 @@ Image-Segmentation-KMeans/
 
 | K Value | Observation                                     |
 | ------- | ----------------------------------------------- |
-| 2       | Broad color regions                             |
+| 2       | Broad color regions with minimal detail         |
 | 4       | Better object separation                        |
 | 6       | More image details preserved                    |
 | 8       | Fine segmentation with richer color information |
 
----
-
-## 🖼️ Output
-
 ### Segmentation Results
 
-Add screenshots of:
+![Segmentation Results](Output/k_values.png)
 
-* Original Image
-* K = 2
-* K = 4
-* K = 6
-* K = 8
+---
 
-### Elbow Method Plot
+## 📉 Elbow Method Analysis
 
-Add the generated WCSS vs K graph.
+The WCSS value decreases as K increases because clusters become more compact. The elbow curve helps determine an optimal K value where increasing clusters further yields diminishing returns.
+
+*(Add elbow_plot.png here if available)*
+
+```markdown
+![Elbow Plot](Output/elbow_plot.png)
+```
 
 ---
 
@@ -135,7 +130,7 @@ pip install opencv-python numpy matplotlib
 ### Run the Program
 
 ```bash
-python segmentation.py
+python kmeans_segmentation.py
 ```
 
 ---
@@ -147,7 +142,8 @@ python segmentation.py
 * WCSS Analysis
 * Elbow Method
 * OpenCV Image Processing
-* Unsupervised Learning Concepts
+* Unsupervised Learning
+* Feature Representation in Images
 
 ---
 
@@ -156,9 +152,19 @@ python segmentation.py
 * Medical Image Analysis
 * Object Detection
 * Remote Sensing
-* Computer Vision
+* Computer Vision Systems
 * Image Compression
 * Pattern Recognition
+
+---
+
+## 📄 Project Report
+
+Detailed project documentation is available in:
+
+```text
+Project_Report.pdf
+```
 
 ---
 
@@ -166,8 +172,8 @@ python segmentation.py
 
 **Sachin Tomar**
 
-B.Tech Mathematics & Computing
-National Institute of Technology Kurukshetra
+🎓 B.Tech Mathematics & Computing
+🏫 National Institute of Technology Kurukshetra
 
 ---
 
